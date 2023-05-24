@@ -141,7 +141,7 @@ def does_vectorstore_exist(persist_directory: str) -> bool:
 
 def main():
     # Create embeddings
-    embeddings = HuggingFaceEmbeddings(model_name=embeddings_model_name)
+    embeddings = HuggingFaceEmbeddings(model_name=embeddings_model_name, encode_kwargs={'show_progress_bar': True})
 
     if does_vectorstore_exist(persist_directory):
         # Update and store locally vectorstore
